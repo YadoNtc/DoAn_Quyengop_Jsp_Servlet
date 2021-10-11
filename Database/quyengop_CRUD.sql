@@ -4,7 +4,7 @@ GO
 USE Quyengop
 GO
 
-/****** Object:  Table [dbo].[users]    Script Date: 12/10/2021 5:14:37 SA ******/
+/****** Object:  Table [dbo].[users]    Script Date: 12/10/2021 6:53:58 SA ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,25 +13,29 @@ GO
 
 CREATE TABLE [dbo].[users](
 	[id] [INT] IDENTITY(1,1) NOT NULL,
-	[avatar] [VARCHAR](100) NULL,
 	[password] [VARCHAR](100) NULL,
 	[fullname] [NVARCHAR](100) NULL,
-	[email] [VARCHAR](255) NULL UNIQUE,
-	[address] [NVARCHAR](255) NULL,
+	[email] [VARCHAR](255) NULL,
 	[phonenumber] [VARCHAR](50) NULL,
-	[idgg] [VARCHAR](100) NULL,
-	[idfb] [VARCHAR](100) NULL,
+	[status] [BIT] NULL,
 	[createddate] [DATETIME] NULL,
 	[createdby] [NVARCHAR](100) NULL,
 	[modifieddate] [DATETIME] NULL,
 	[modifiedby] [NVARCHAR](100) NULL,
-	[status] [BIT] NULL,
+	[avatar] [VARCHAR](100) NULL,
 	[admin] [BIT] NULL,
-	[hash] [VARCHAR](255) NULL,
+	[address] [NVARCHAR](255) NULL,
 	[rolescode] [VARCHAR](50) NULL,
+	[hash] [VARCHAR](255) NULL,
+	[idgg] [VARCHAR](100) NULL,
+	[idfb] [VARCHAR](100) NULL,
  CONSTRAINT [PK_userId] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [email_unique] UNIQUE NONCLUSTERED 
+(
+	[email] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
 UNIQUE NONCLUSTERED 
 (
