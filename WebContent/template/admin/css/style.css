@@ -1,0 +1,82 @@
+#formSubmit .btn-img {
+    color: #fff;
+    border-radius: 5px !important;
+    position: relative;
+    background: #363b45 !important;
+    text-transform: uppercase;
+}
+
+#formSubmit .btn-img:after {
+    content: "";
+    border-width: 8px 8px 8px 0;
+    border-style: solid;
+    border-color: transparent;
+    position: absolute;
+    top: 31.5%;
+    right: 0;
+}
+
+#formSubmit .btn-img-sm:after {
+    border-width: 5px 5px 5px 0 !important;
+    top: 33.5%;
+}
+
+#formSubmit .btn-img-xs:after {
+    border-width: 3px 3px 3px 0;
+    top: 35.5%;
+}
+
+#formSubmit .btn-img:hover,
+#formSubmit .btn-img:focus {
+    outline: none;
+    color: #fff;
+}
+
+#formSubmit .btn-img i {
+    position: absolute;
+    top: -1px;
+    left: 100%;
+    width: 32%;
+    height: 103.5%;
+    padding: 15% 0;
+}
+
+#formSubmit .btn-img-sm i {
+    height: 106.5%;
+}
+
+#formSubmit .btn-img-xs i {
+    height: 108.5%;
+    font-size: 10px;
+    padding: 10% 0;
+}
+
+#formSubmit .btn-img.red:hover:after {
+    border-right-color: #363b45 !important;
+}
+
+#formSubmit .btn-img.red:hover i {
+    background: #363b45 !important;
+}
+
+#formSubmit .btn-img.red:hover,
+#formSubmit .btn-img.red i {
+    background: #ff4d4d !important;
+}
+
+#formSubmit .btn-img.red:after {
+    border-right-color: #ff4d4d !important;
+}
+
+@media only screen and (max-width: 767px) {
+    #formSubmit .btn-img {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+
+
+

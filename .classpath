@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="com/doan/quyengop/" kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina-ssi.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina-storeconfig.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/ecj-4.20.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/jasper.jar" sourcepath="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/jaspic-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/servlet-api.jar" sourcepath="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-coyote.jar" sourcepath="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-cs.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-de.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-ko.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-pt-BR.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-ru.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-i18n-zh-CN.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-jni.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-util-scan.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/tomcat-websocket.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/lib/websocket-api.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/bin/bootstrap.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/bin/commons-daemon.jar"/>
+	<classpathentry kind="lib" path="D:/Download/apache-tomcat-9.0.50-windows-x64/apache-tomcat-9.0.50/bin/tomcat-juli.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/CKFinder-2.6.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/CKFinderPlugin-FileEditor-2.6.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/CKFinderPlugin-ImageResize-2.6.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/CKFinderPlugin-Watermark-2.6.2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec-1.15.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-annotations-2.12.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-2.12.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-databind-2.12.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jbcrypt-0.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jboss-logging-3.1.4.GA.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jboss-vfs-3.2.11.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mail-1.4.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mssql-jdbc-9.2.1.jre8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sitemesh-2.4.2.jar" sourcepath="D:/Download/thuvien_jar/sitemesh-2.4.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/thumbnailator-0.4.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/weld-servlet-2.4.8.Final.jar"/>
+	<classpathentry kind="lib" path="D:/Download/thuvien_jar/sitemesh-2.4.2.jar"/>
+	<classpathentry kind="lib" path="D:/Download/thuvien_jar/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/Download/thuvien_jar/javax.mail-api-1.6.2.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
