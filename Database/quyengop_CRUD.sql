@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[users](
 	[avatar] [VARCHAR](100) NULL,
 	[password] [VARCHAR](100) NULL,
 	[fullname] [NVARCHAR](100) NULL,
-	[email] [VARCHAR](255) NULL,
+	[email] [VARCHAR](255) NULL UNIQUE,
 	[address] [NVARCHAR](255) NULL,
 	[phonenumber] [VARCHAR](50) NULL,
 	[idgg] [VARCHAR](100) NULL,
