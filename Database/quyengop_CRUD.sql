@@ -25,7 +25,6 @@ CREATE TABLE [dbo].[users](
 	[avatar] [VARCHAR](100) NULL,
 	[admin] [BIT] NULL,
 	[address] [NVARCHAR](255) NULL,
-	[rolescode] [VARCHAR](50) NULL,
 	[hash] [VARCHAR](255) NULL,
 	[idgg] [VARCHAR](100) NULL,
 	[idfb] [VARCHAR](100) NULL,
@@ -114,11 +113,21 @@ GO
 ALTER TABLE [dbo].[dotquyengop] CHECK CONSTRAINT [FK_user_dqg]
 GO
 
+CREATE PROC currentMoney(@id int) AS
+BEGIN 
+	DECLARE @Sum INT
+	SELECT @Sum = SUM(amoutmoney) FROM dbo.dotquyengop
+	WHERE campaginId = @id
+	UPDATE dbo.chuongtrinhquyengop SET currentmoney = @Sum
+	WHERE id = @id
+END
+GO
+
 --===============================INSERT TABLE================================================================
 
 INSERT INTO dbo.users
 (password, fullname, email, address, phonenumber, status, admin, createddate) VALUES
-('827CCB0EEA8A706C4C34A16891F84E7B', N'Nguyễn Thành Công', 'ntcongyamaha@gmail.com', N'HCM', '0329738149', 1, 1, CAST('2021-10-01 00:00:00' AS DATETIME)),
+('827CCB0EEA8A706C4C34A16891F84E7B', N'admin', 'admin@gmail.com', N'HCM', '0329738149', 1, 1, CAST('2021-10-01 00:00:00' AS DATETIME)),
 ('827CCB0EEA8A706C4C34A16891F84E7B', N'User 1', 'user01@gmail.com', N'HCM', '0329738149', 1, 0, CAST('2021-10-01 00:00:00' AS DATETIME))
 GO
 
