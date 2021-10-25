@@ -26,6 +26,8 @@ public interface IUserService {
 	UserModel findAcByEmailAndHash(String email, String hash, boolean status);
 	
 	UserModel updateActiveAccount(UserModel userModel);
+
+	UserModel findByEmail(String emailAddress);
 	
 	
 }

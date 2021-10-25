@@ -32,8 +32,8 @@
 								Cài đặt
 						</a></li>
 
-						<li><a href="profile.html"> <i
-								class="ace-icon fa fa-user"></i> Thông tin tài khoản
+						<li><a href="<c:url value="/admin-change-pass" />"> <i
+								class="ace-icon fa fa-user"></i> Thay đổi mật khẩu
 						</a></li>
 
 						<li class="divider"></li>

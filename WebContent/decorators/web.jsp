@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- <base href="/com.doan.quyengop/" /> -->
 <title><dec:title default="Trang chủ"/></title>
 <link rel="shortcut icon" type="image/x-icon" href="<c:url value="/template/web/image/xfavicon.jpg"/>">
 

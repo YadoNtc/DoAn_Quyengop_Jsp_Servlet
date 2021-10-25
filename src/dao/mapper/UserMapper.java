@@ -21,7 +21,6 @@ public class UserMapper implements IRowMapper<UserModel>{
 			model.setCreatedDate(resultSet.getTimestamp("createddate"));
 			model.setStatus(resultSet.getBoolean("status"));
 			model.setAdmin(resultSet.getBoolean("admin"));
-			model.setRolesCode(resultSet.getString("rolescode"));
 			model.setMyhash(resultSet.getString("hash"));
 			model.setIdgg(resultSet.getString("idgg"));
 			model.setIdfb(resultSet.getString("idfb"));

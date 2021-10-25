@@ -24,4 +24,8 @@ public interface IUserDao {
 	UserModel findAcByEmailAndHash(String email, String hash, boolean status);
 	
 	void updateActiveAccount(UserModel userModel);
+	
+	void changePassword(String email, String oldPassword, String newPassword);
+
+	UserModel findByEmail(String emailAddress);
 }

@@ -21,13 +21,12 @@
 	<link rel="stylesheet" type="text/css" href="<c:url value="/template/login/css/util.css"/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value="/template/register/css/main.css"/>">
 <!--===============================================================================================-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
 
 	<dec:body/>
 
-<!--===============================================================================================-->
-	<script src="<c:url value="/template/login/vendor/jquery/jquery-3.2.1.min.js"/>"></script>
 <!--===============================================================================================-->
 	<script src="<c:url value="/template/register/js/main.js"/>"></script>
 </body>

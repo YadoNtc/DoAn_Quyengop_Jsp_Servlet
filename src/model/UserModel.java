@@ -11,7 +11,6 @@ public class UserModel extends AbstractModel<UserModel> {
 	private String idfb;
 	private String address;
 	private boolean status;
-	private String rolesCode;
 	private boolean admin;
 	private boolean remember;
 	private String myhash;
@@ -63,14 +62,6 @@ public class UserModel extends AbstractModel<UserModel> {
 
 	public void setStatus(boolean status) {
 		this.status = status;
-	}
-
-	public String getRolesCode() {
-		return rolesCode;
-	}
-
-	public void setRolesCode(String rolesCode) {
-		this.rolesCode = rolesCode;
 	}
 
 	public boolean isRemember() {

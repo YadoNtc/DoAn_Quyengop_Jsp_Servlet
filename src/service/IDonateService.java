@@ -3,13 +3,10 @@ package service;
 import java.util.List;
 
 import model.DonateModel;
-import paging.Pageable;
 
 public interface IDonateService {
 
 	DonateModel save(DonateModel donateModel);
-	
-	List<DonateModel> findAll(Pageable pageable);
 	
 	List<DonateModel> findAll();
 	

@@ -37,17 +37,18 @@
 
 	<div class="content-main-user" style="background: #F2F2F2;">
 		<div class="container">
-			<!-- <div class="right"> -->
-				<!-- <div id="main-content"> -->
+			
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<span style="font-weight: bold;"><i class="fa fa-user"
 								aria-hidden="true"></i> Thông tin cá nhân</span>
 							<div class="pull-right">
-								<a href="#" class="btn btn-xs btn-warning margin-left">
-								<i class="fa fa-refresh"></i> Thay đổi mật khẩu</a> 
+								<a href="<c:url value="/change-pass?id=${userModel.id}"/>" class="btn btn-xs btn-warning margin-left">
+									<i class="fa fa-refresh"></i> Thay đổi mật khẩu
+								</a> 
 								<a href="<c:url value="/user-profile/delete?id=${userModel.id}"/>" onclick="return confirm('Bạn xác nhận không còn sử dụng tài khoản ${userModel.fullName}?');" class="btn btn-xs btn-default margin-left">
-								<i class="fa fa-lock"></i> Khóa tài khoản</a>
+									<i class="fa fa-lock"></i> Khóa tài khoản
+								</a>
 							</div>
 						</div>
 						

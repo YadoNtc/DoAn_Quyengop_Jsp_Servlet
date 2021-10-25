@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp" %>
+<c:url var="submitPaypal" value="/authorize_payment"/>
 <!DOCTYPE html>
 <main style="padding: 104px 0">
 	
@@ -13,21 +14,22 @@
 	    <div class="container">
 	        <div class="row">
 	            <div style="margin-top:63px;" class="col-md-8">
-	                <form name="donateForm" method="post" target="_self" action="">		         	
+	                <form method="post" action="paypal">		         	
 	                    <div class="amountDiv">  
-	                    	<input type="hidden" name="hosted_button_id" id="hosted_button_id" value="">                                            
 	                        <h4 class="tertiary-color text-uppercase">Vui lòng chọn số tiền quyên góp</h4>
-	                        <div id="myDIV" class="text-center" style="padding: 20px 0px;height: 100px;">
-	                            <a id="btn-10" class="btn btn-amount btn-active" onclick="setDataType(this)" role="button">10USD</a>
+	                        <div id="selectMoney" class="text-center" style="padding: 20px 0px;height: 100px;">
+		                    	<input type="hidden" name="amoutMoney" id="total">                                            	         
+	                            <a id="btn-10" class="btn btn-amount" onclick="setDataType(this)" role="button">10 USD</a>
 	                            <a id="btn-50" class="btn btn-amount" onclick="setDataType(this)" role="button">50 USD</a>
 	                            <a id="btn-100" class="btn btn-amount" onclick="setDataType(this)" role="button">100 USD</a>
 	                            <a id="btn-500" class="btn btn-amount" onclick="setDataType(this)" role="button">500 USD</a>
 	                            
-	                            <div class="text-left" style="border-bottom: 1px solid #d9d9d9; display: none;">
-	                                <input id="other-amount" class="" type="number" name="amountMoney" placeholder="Số khác">
-	                            </div>
 	                        </div>
-	                        
+                            
+                            <input id="other-amount" type="number" name="amoutMoney" placeholder="Số khác" style="width: 100%; border: 1px solid #d9d9d9; display:none">                     
+                            
+                           	<input type="button" onclick="return showMoney();" id="btnMoney" class="btn btn-primary" value="Số khác">
+                                                  
 	                        <div class="donate-payment-account">
 	                        <h4 class="tertiary-color text-uppercase">thông tin liên lạc</h4>
 	                        <div class="form-group">
@@ -70,51 +72,16 @@
 	                    
 	                    <div class="amountDiv donate-payment-option" style="margin-top: 15px;">
 	                        <h4 class="tertiary-color text-uppercase">Phương thức quyên góp</h4>
-	                        <div class="text-center p-3">
-	                            <input type="hidden" id="payment_Mode" name="payment_Mode" value="">
-	                            <a id="epay" onclick="check_payment_option('epay', this);" class="tertiary-bg" role="button">Thẻ tín dụng/ Thẻ ghi nợ</a>
-	                            <a id="paypal" onclick="check_payment_option('paypal', this);" class="tertiary-bg" role="button"><img src="<c:url value="template/web/image/logo-paypal.png"/>"></a>
-	                            <div id="selectBank" class="selectBank">
-	                                <input type="hidden" class="input_text" name="fullName" value="">
-	                                <input type="hidden" class="input_text" name="txnAmount" id="txnAmount" value="">
-	                                <input type="hidden" class="input_text" name="fee" value="">
-	                                <input type="hidden" class="input-text" id="bankID_text" name="" value="">
-	                                <select id="bankID" name="bankID" class="input_text d-none">
-	                                    <option value="0">Chọn ngân hàng</option>
-	                                    <option value="99001">Agribank</option>
-	                                    <option value="99002">Saigonbank</option>
-	                                    <option value="99003">PG Bank</option>
-	                                    <option value="99004">GP Bank</option>
-	                                    <option value="99005">Sacombank</option>
-	                                    <option value="99006">Nam Á Bank</option>
-	                                    <option value="99007">Đông Á bank</option>
-	                                    <option value="99008">Vietinbank</option>
-	                                    <option value="99009">Techcombank</option>
-	                                    <option value="99010">VIB</option>
-	                                    <option value="99011">HDBank</option>
-	                                    <option value="99012">Eximbank</option>
-	                                    <option value="99013">TienphongBank</option>
-	                                    <option value="99014">Maritime Bank</option>
-	                                    <option value="99015">BIDV</option>
-	                                    <option value="99016">MB</option>
-	                                    <option value="99017">Seabank</option>
-	                                    <option value="99018">SHB</option>
-	                                    <option value="99019">Việt Á Bank</option>
-	                                    <option value="99020">OceanBank</option>
-	                                    <option value="99021">Vietcombank</option>
-	                                    <option value="99022">VP Bank</option>
-	                                    <option value="99023">ACB</option>
-	                                    <option value="99027">NaviBank</option>
-	                                    <option value="99026">Bắc á</option>
-	                                </select>
-	                            </div>
+	                        <div class="text-center p-3">	          
+                            	<a class="btn-active">Thẻ tín dụng/ Thẻ ghi nợ</a><i class="fab fa-d-and-d" style="font-size: 25px;"></i>
+							    <img class="btn-active" src="<c:url value="template/web/image/logo-paypal.png"/>" style="border-radius: 20px">                    
 	                        </div>
 	                    </div>
 	
 	                    <div class="text-center btn-submit">	
 	                        <button type="submit" id="submit" class="text-uppercase">quyên góp ngay</button>
 	                    </div>
-	                    <input type="hidden" name="task" value="donate">
+	                   
 	                    <br>
 	                </form>
 	            </div>
@@ -135,26 +102,14 @@
 </main>
 
 <script type="text/javascript">
+	function showMoney() {
+		$('#selectMoney').hide();
+		$('#selectMoney').prop('disabled', true);
+		$('#other-amount').show();
+	}
 	function check_payment_option(paymentMode, obj) {
-		var _payment_option = paymentMode;
 		$('div.donate-payment-option').find('a').removeClass('on');
 		$(obj).addClass('on');
-		document.getElementById('payment_Mode').value = paymentMode;
-		if (paymentMode == 'epay') {
-			document.donateForm.action = "";
-			$('#submit').removeClass('onclick');
-			$('#bankID').removeClass('d-none');
-		} else {
-			$('#submit').attr("onclick", "submitTwice(this.form)");
-			$('#bankID').addClass('d-none');
-		}
-	}
-	
-	function submitTwice(form) {
-		if (document.getElementById('payment_Mode').value = "paypal") {
-			form.action = 'https://paypal.me/quyengop?locale.x=vi_VN';
-			form.submit();
-		}
 	}
 	
 	function reset() {
@@ -168,29 +123,27 @@
 		var x = ele.innerHTML;
 		var y = 23000;
 		if (x == "10 USD") {
-            document.getElementById('hosted_button_id').value = '5UWGESJZVYST4';
-            document.getElementById('txnAmount').value = 10 * y;
+            document.getElementById('total').value = '10';
+            //document.getElementById('txnAmount').value = 50 * y;
             reset();
             ele.classList.add('btn-active');
         }
-        if (x == "50 USD") {
-            document.getElementById('hosted_button_id').value = '7E6T7S4TSBKZG';
-            document.getElementById('txnAmount').value = 50 * y;
+		else if (x == "50 USD") {
+            document.getElementById('total').value = '50';
+            //document.getElementById('txnAmount').value = 100 * y;
             reset();
             ele.classList.add('btn-active');
         }
-        if (x == "100 USD") {
-            document.getElementById('hosted_button_id').value = '394Z7KQKEHAQC';
-            document.getElementById('txnAmount').value = 100 * y;
+		else if (x == "100 USD") {
+            document.getElementById('total').value = '100';
+           // document.getElementById('txnAmount').value = 500 * y;
+            reset();
+            ele.classList.add('btn-active');
+        } else if (x == "500 USD") {
+            document.getElementById('total').value = '500';
+            //document.getElementById('txnAmount').value = 500 * y;
             reset();
             ele.classList.add('btn-active');
         }
-        if (x == "500 USD") {
-            document.getElementById('hosted_button_id').value = 'MUXXK4XFJJ5EE';
-            document.getElementById('txnAmount').value = 500 * y;
-            reset();
-            ele.classList.add('btn-active');
-        }
-        document.getElementById('other-amount').value = "";
 	}
 </script>

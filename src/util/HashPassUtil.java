@@ -10,6 +10,7 @@ public class HashPassUtil {
 	 public static String hashMd5(String pass) {
 		 return DigestUtils.md5Hex(pass).toUpperCase();
 	 }
-	
+	 
+
 
 }

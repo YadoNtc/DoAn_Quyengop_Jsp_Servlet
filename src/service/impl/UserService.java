@@ -79,4 +79,9 @@ public class UserService implements IUserService {
 		return userDao.findByIdFb(email, idFb, status);
 	}
 
+	@Override
+	public UserModel findByEmail(String emailAddress) {
+		return userDao.findByEmail(emailAddress);
+	}
+
 }

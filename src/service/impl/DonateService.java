@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import dao.IDonate;
 import model.DonateModel;
-import paging.Pageable;
 import service.IDonateService;
 
 public class DonateService implements IDonateService {
@@ -20,11 +19,6 @@ public class DonateService implements IDonateService {
 		donateModel.setCreatedDate(new Timestamp(System.currentTimeMillis()));
 		Long donateId = donateDao.save(donateModel);
 		return donateDao.findOne(donateId);
-	}
-
-	@Override
-	public List<DonateModel> findAll(Pageable pageable) {
-		return donateDao.finfAll(pageable);
 	}
 
 	@Override

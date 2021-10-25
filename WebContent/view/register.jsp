@@ -2,16 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title><dec:title default="Đăng ký" /></title>
-</head>
-<body>
 
 	<div class="limiter">
 		<div class="container-login100"
-			style="background-image: url('template/login/images/bg-01.jpg'); padding-top: 10%;">
+			style="background-image: url('template/login/images/bg-01.jpg'); padding-top: 5%;">
 			<script src="https://www.google.com/recaptcha/api.js?hl=vi"></script>
 			<!-- <div class="text-center form-group" style="width: 100%">
 				<span class="login100-form-title p-b-10"> <img src="#">
@@ -27,11 +21,10 @@
 					</div>
 					
 					<c:if test="${not empty error}">
-						<p style="font-style: italic;" 
-						class="alert alert-${alert}">
+					<p style="font-style: italic;" class="alert alert-${alert}">
 						${message}
 					</p>
-					</c:if>
+				</c:if>
 
 					<div class="wrap-input100 validate-input register-input" data-validate="Yêu cầu nhập đầy đủ Họ và tên của bạn">
 						<input placeholder="Họ và tên" class="input100" type="text" name="fullName" value="${model.fullName}"> <span class="focus-input100"></span>
@@ -46,9 +39,14 @@
 					</div>
 
 					<div class="wrap-input100 validate-input register-input" data-validate="Yêu cầu nhập mật khẩu">
-						<input placeholder="Mật khẩu, lớn hơn 6 ký tự" class="input100" type="password" name="password"> <span class="focus-input100"></span>
+						<input id="password" placeholder="Nhập mật khẩu" class="input100" type="password" name="password"> <span class="focus-input100"></span>
 					</div>	
 					
+					<div class="wrap-input100 validate-input register-input" data-validate="Yêu cầu xác nhận mật khẩu">
+						<input id="confirmNewPassword" placeholder="Xác nhận mật khẩu" class="input100" type="password" name="confirmNewPassword"> <span class="focus-input100"></span>
+					</div>
+					<p id="alert" style="font-style: italic; display: none; color: red; font-size: 15px;">Xác nhận mật khẩu không đúng!</p>
+								
 					<input type="date" readonly="readonly" id="today" name="createdDate" style="display: none;" />				
 
 					<!-- widget city -->
@@ -81,10 +79,10 @@
 						
 					</div>  -->
 					 
-					<div class="form-terms">
+					<!-- <div class="form-terms">
                           <input type="checkbox">
                           <span>I agree all statements in <a href="">Terms & Conditions</a></span>
-                    </div>
+                    </div> -->
                     
 					<div class="container-login100-form-btn m-t-17">
 						<button type="submit" class="login100-form-btn">ĐĂNG KÝ</button>
@@ -97,9 +95,9 @@
 						<!-- </center> -->
 					</div>
 
-					<a style="width: 100%;" href="javascript:void(0)"
+					<!-- <a style="width: 100%;" href="javascript:void(0)"
 						onclick="return login();" class="btn-face m-b-20"> <i class="fa fa-facebook-official"></i> Đăng nhập bằng Facebook
-					</a>
+					</a> -->
 
 					<!-- <div class="flex-c-m">
 						<a href="#" class="login100-social-item bg1"> <i
@@ -115,90 +113,20 @@
 							class="txt2 bo1"> Đăng nhập </a>
 					</div>
 				</form>
-			</div>
-			<script>
-				/* window.onload = function() {
-					var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-					if ($recaptcha) {
-						$recaptcha.setAttribute("required", "required");
-					}
-				}; */
+			</div>	
+		</div>	
+	</div>	
 				
-				window.fbAsyncInit = function() {
-					FB.init({
-						appId : '2993314924097454',
-						cookie : true,
-						xfbml : true,
-						version : 'v7.0'
-					});
-					FB.AppEvents.logPageView();
-				};
-
-				(function(d, s, id) {
-					var js, fjs = d.getElementsByTagName(s)[0];
-					if (d.getElementById(id)) {
-						return;
-					}
-					js = d.createElement(s);
-					js.id = id;
-					js.src = "https://connect.facebook.net/en_US/sdk.js";
-					fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-
-				function login() {
-					FB.login(function(response) {
-						if (response.status === 'connected') {
-							getInfo();
-						} else if (response.status === 'not_authorized') {
-							console.log(response.status);
-						} else {
-							console.log(response.status);
-						}
-					}, {
-						scope : 'email'
-					});
-				}
-				// get user basic info
-
-				function getInfo(params, ip) {
-					
-					FB.api(
-						'/me',
-						'GET',
-						{
-							fields : 'id, name, email, link, birthday, gender'
-						},
-						function(response) {
-							var id = response.hasOwnProperty('id') ? response.id: '';
-							var email = response.hasOwnProperty('email') ? response.email: '';
-							var name = response.hasOwnProperty('name') ? response.name: 'HỌ và tên';
-							if (email != '') {											
-								$.ajax({
-									url : '/site/login_fb',
-									type : 'post',
-									data : {
-										'id' : id,
-										'email' : email,
-										'name' : name,
-										'_csrf' : $('meta[name="csrf-token"]').attr('content')												
-									},
-									success : function(response) {											
-										location.href = response.data.url;
-									}
-								})
-							} else {
-								alert('Không thể đăng nhập bằng facebook lúc này');
-							}
-						});
-				}
-			</script>
-		</div>
-	</div>
-
-	<div id="dropDownSelect1"></div>
 <script type="text/javascript">
 	document.querySelector('#today').valueAsDate = new Date();
+	
+	$(document).ready(function() {
+		$('#password, #confirmNewPassword').on('keyup', function() {
+			if ($('#password').val() == $('#confirmNewPassword').val()) {
+				$('#alert').hide();
+			} else {
+				$('#alert').show();
+			}
+		});
+	});
 </script>
-</body>
-</html>

@@ -38,7 +38,7 @@
 										  <option value="10000000">10 triệu đồng</option>
 									  </optgroup>
 								</select>
-                                <input id="amoutMoney" type="number" name="amoutMoney" placeholder="Số khác" style="width: 100%; border: 1px solid #d9d9d9; display:none"  value="">
+                                <input id="amoutMoney" type=number name="amoutMoney" placeholder="Số khác" style="width: 100%; border: 1px solid #d9d9d9; display:none"  value="">
 	                            <div class="text-left mt-2" style="border-bottom: 1px solid #d9d9d9; width: 100%">
 	                            	<input type="button" onclick="return showMoney();" id="btnMoney" class="btn btn-primary" value="Số khác">
 	                            </div>
@@ -48,8 +48,8 @@
 	                        <h4 class="tertiary-color text-uppercase">thông tin liên lạc</h4>
 	                        <div class="form-group">
 	                        	<c:if test="${not empty userModel}">
-	                        		<input class="form-control" id="fullName" name="" type="text" placeholder="Họ & tên" required value="${userModel.fullName}">	                
-	                            	<input class="form-control" id="email" name="" type="email" placeholder="Email" required value="${userModel.email}">
+	                        		<input class="form-control" id="fullName" name="fullName" type="text" placeholder="Họ & tên" required value="${userModel.fullName}">	                
+	                            	<input class="form-control" id="email" name="email" type="email" placeholder="Email" required value="${userModel.email}">
 	                           	 	<input class="form-control" id="mobile" name="mobile" type="number" placeholder="Số điện thoại" required value="${userModel.mobile}">
 	                           	 	<input type="hidden" name="userId" value="${userModel.id}"/>
 	                        	</c:if>

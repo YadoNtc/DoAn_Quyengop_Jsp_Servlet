@@ -1,14 +1,55 @@
 package model;
 
+import java.text.DecimalFormat;
+
 public class DonateDetailModel extends AbstractModel<DonateDetailModel> {
 
 	private Long campaginId;
 	private Long userId;
 	private Long amoutMoney;
+	private Long subtotal;
+	private Long total;
+	private Long tax;
+	private Long shipping;
 	private String fullName;
 	private String email;
 	private String mobile;
 	private String status;
+	private DonateModel donateModel = new DonateModel();
+	
+	DecimalFormat df = new DecimalFormat("###,###.##");
+	
+	
+	
+	/*
+	 * public DonateDetailModel() {}
+	 * 
+	 * public DonateDetailModel(String total, String campaginId, String userId,
+	 * String fullName, String email, String mobile) { this.total =
+	 * Long.parseLong(total); this.campaginId = Long.parseLong(campaginId);
+	 * this.userId = Long.parseLong(userId); this.fullName = fullName; this.email =
+	 * email; this.mobile = mobile; }
+	 */
+	
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public String getSubTotal() {
+		return df.format(subtotal);
+	}
+	
+	public String getTotal() {
+		return df.format(total);	
+	}
+	
+	public String getShipping() {
+		return df.format(shipping);
+	}
+
+	public String getTax() {
+		return df.format(tax);
+	}
 
 	public Long getUserId() {
 		return userId;
@@ -25,11 +66,11 @@ public class DonateDetailModel extends AbstractModel<DonateDetailModel> {
 	public void setCampaginId(Long campaginId) {
 		this.campaginId = campaginId;
 	}
-
-	public Long getAmoutMoney() {
-		return amoutMoney;
+	
+	public Long getAmoutMoney() { 
+		return amoutMoney; 
 	}
-
+	 
 	public void setAmoutMoney(Long amoutMoney) {
 		this.amoutMoney = amoutMoney;
 	}
@@ -64,6 +105,14 @@ public class DonateDetailModel extends AbstractModel<DonateDetailModel> {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public DonateModel getDonateModel() {
+		return donateModel;
+	}
+
+	public void setDonateModel(DonateModel donateModel) {
+		this.donateModel = donateModel;
 	}
 
 }

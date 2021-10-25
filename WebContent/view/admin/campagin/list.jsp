@@ -87,7 +87,7 @@
                                         <td>
                                         	<fmt:setLocale value="vi_VN"/>
                                         	<fmt:formatNumber pattern="#,###,###" value="${item.amoutMoney}"/>
-                                        	
+                                        
                                         </td>  
                                         <td>${item.userId }</td>
                                         <td>${item.createdDate }</td>

@@ -11,11 +11,11 @@ public class UserDao extends AbstractDao<UserModel> implements IUserDao{
 	@Override
 	public Long save(UserModel userModel) {
 		StringBuilder sql = new StringBuilder("INSERT INTO dbo.users ");
-		sql.append("(avatar, password, fullname, email, address, phonenumber, createddate, hash, idgg, createdby, status, rolescode, admin, idfb) ");
-		sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		sql.append("(avatar, password, fullname, email, address, phonenumber, createddate, hash, idgg, createdby, status, admin, idfb) ");
+		sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		return insert(sql.toString(), userModel.getAvatar(), userModel.getPassword(), userModel.getFullName(), userModel.getEmail(),
 				userModel.getAddress(), userModel.getMobile(), userModel.getCreatedDate(), userModel.getMyhash(), userModel.getIdgg(),
-				userModel.getCreatedBy(), userModel.isStatus(), userModel.getRolesCode(), userModel.isAdmin(), userModel.getIdfb());
+				userModel.getCreatedBy(), userModel.isStatus(), userModel.isAdmin(), userModel.getIdfb());
 	}
 
 	@Override
@@ -35,10 +35,10 @@ public class UserDao extends AbstractDao<UserModel> implements IUserDao{
 	public void update(UserModel updateModel) {
 		StringBuilder sql = new StringBuilder("UPDATE dbo.users SET ");
 		sql.append("avatar = ?, password = ?, fullname = ?, email = ?, address = ?, phonenumber = ?, createddate = ?, ");
-		sql.append("createdby = ?, status = ?, rolescode = ?, admin = ?, modifieddate = ?, modifiedby = ? WHERE  id = ?");
+		sql.append("createdby = ?, status = ?, admin = ?, modifieddate = ?, modifiedby = ? WHERE  id = ?");
 		update(sql.toString(), updateModel.getAvatar(), updateModel.getPassword(), updateModel.getFullName(), updateModel.getEmail(),
 				updateModel.getAddress(), updateModel.getMobile(), updateModel.getCreatedDate(), updateModel.getCreatedBy(), updateModel.isStatus(),
-				updateModel.getRolesCode(), updateModel.isAdmin(), updateModel.getModifiedDate(), updateModel.getModifiedBy(), updateModel.getId());
+				updateModel.isAdmin(), updateModel.getModifiedDate(), updateModel.getModifiedBy(), updateModel.getId());
 		
 	}
 
@@ -84,6 +84,22 @@ public class UserDao extends AbstractDao<UserModel> implements IUserDao{
 		StringBuilder sql = new StringBuilder("SELECT * FROM dbo.users ");
 		sql.append("WHERE email = ? AND idfb = ? AND status = ?");
 		List<UserModel> users = query(sql.toString(), new UserMapper(), email, idFb, status);
+		return users.isEmpty() ? null : users.get(0);
+	}
+
+	@Override
+	public void changePassword(String email, String oldPassword, String newPassword) {
+		StringBuilder sql = new StringBuilder("UPDATE dbo.users SET password = ?");
+		sql.append("WHERE email = ? AND ");
+		update(sql.toString(), email, oldPassword, newPassword);
+		
+	}
+
+	@Override
+	public UserModel findByEmail(String emailAddress) {
+		StringBuilder sql = new StringBuilder("SELECT * FROM dbo.users ");
+		sql.append("WHERE email = ?");
+		List<UserModel> users = query(sql.toString(), new UserMapper(), emailAddress);
 		return users.isEmpty() ? null : users.get(0);
 	}
 

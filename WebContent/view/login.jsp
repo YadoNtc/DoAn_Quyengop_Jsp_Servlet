@@ -10,7 +10,7 @@
 <div class="limiter">
 	<div class="container-login100"
 		style="background-image: url('template/login/images/bg-01.jpg');">
-		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-20 p-b-54">
 			
 			<form action="<c:url value="/dang-nhap"/>" class="login100-form validate-form" method="post">			
 				<input id="form-token" type="hidden" name="_csrf" value=""/>
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 
-				<div class="txt1 text-center p-t-54 p-b-20">
+				<div class="txt1 text-center p-t-20 p-b-20">
 					<span> Hoặc đăng nhập sử dụng </span>
 				</div>
 
@@ -64,7 +64,7 @@
 					</a>
 				</div>
 
-				<div class="flex-col-c p-t-155">
+				<div class="flex-col-c p-t-20">
 					<span class="txt1 p-b-17"> Chưa có tài khoản </span> <a
 						href="<c:url value="/dang-ky"/>" class="txt2"> Đăng ký mới </a>
 				</div>

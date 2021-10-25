@@ -2,12 +2,9 @@
 
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-
 import dao.IDonate;
 import dao.mapper.DonateMapper;
 import model.DonateModel;
-import paging.Pageable;
 
 public class DonateDao extends AbstractDao<DonateModel> implements IDonate {
 
@@ -32,17 +29,6 @@ public class DonateDao extends AbstractDao<DonateModel> implements IDonate {
 	public int countTotalItem() {
 		String sql = "SELECT COUNT(*) FROM dbo.chuongtrinhquyengop";
 		return count(sql);
-	}
-
-	@Override
-	public List<DonateModel> finfAll(Pageable pageable) {
-		StringBuilder sql = new StringBuilder("SELECT * FROM dbo.chuongtrinhquyengop ");
-		if (pageable.getSorter() != null && StringUtils.isNotBlank(pageable.getSorter().getSortName()) && StringUtils.isNotBlank(pageable.getSorter().getSortBy())) {
-			sql.append("ORDER BY "+pageable.getSorter().getSortName()+" DESC ");
-			sql.append("OFFSET " +pageable.getOffset()+" ROWS ");	
-			sql.append("FETCH FIRST "+pageable.getLimit()+" ROWS ONLY");	
-		}
-		return query(sql.toString(), new DonateMapper());
 	}
 
 	@Override
