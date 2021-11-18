@@ -126,7 +126,8 @@ public class UserController extends HttpServlet {
 	protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ConvertDate.convertDate();
 		request.setCharacterEncoding("UTF-8");		
-		UserModel userModel =  FormUtil.toModel(UserModel.class, request);
+		//UserModel userModel =  FormUtil.toModel(UserModel.class, request);
+		UserModel userModel = new UserModel();
 		try {									
 			for (String ids : request.getParameterValues("id")) { 
 				Long id = Long.parseLong(ids);

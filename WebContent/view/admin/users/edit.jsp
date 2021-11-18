@@ -53,7 +53,7 @@
 					<div class="container" style="width: 70%; box-shadow: 1px 1px 2px 5px rgb(1 1 1 / 10%);">
 	
 						<form id="formSubmit" action="admin-user" class="validate-form" method="post">
-							<button style="float: right;" class="btn btn-info" formaction="reset">Reset</button><br /><br />
+							<button style="float: right;" class="btn btn-info" formaction="admin-user/reset">Reset</button><br /><br />
 							<div class="form-group" style="display: none;">
 								<label for="id">Id:</label>
 								<input type="text" class="form-control" name="id" id="id" value="${model.id}"/>

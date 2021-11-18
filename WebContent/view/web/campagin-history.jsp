@@ -67,7 +67,7 @@
 	                                    	</c:if>	                                    	
                                     	</c:forEach>                                
                                    	</td>
-                                    <td>${item.id}</td>
+                                    <td>${item.campaginId}</td>
                                     <td>
                                     	<c:if test="${item.status == 'transferring' }">Chưa chuyển khoản</c:if>
                                     	<c:if test="${item.status == 'transferred' }">Đã chuyển khoản</c:if>
